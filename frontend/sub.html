@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenTrace — Subscriptions</title>
+  <meta name="description" content="GreenTrace premium subscriptions — plant trees, compete, and unlock premium features."/>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Consolidated CSS -->
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <a class="brand" href="index.html" aria-label="GreenTrace home">
+        <img src="./images/image.png" alt="GreenTrace logo" class="logo-img" />
+        <span class="brand-text">GreenTrace</span>
+      </a>
+      <p class="tagline">Track and Celebrate Tree Planting</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="sub.html" style="color:var(--accent); font-weight:bold;">Subscription</a>
+      <div id="nav-auth-area">
+        <a href="login.html" class="btn">Login</a>
+        <a href="signup.html" class="btn">Sign Up</a>
+      </div>
+      <!-- Dark mode toggle -->
+      <button id="darkModeToggle" class="dark-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <main>
+      <section aria-labelledby="plans-heading">
+        <h2 id="plans-heading" class="sr-only">Subscription Plans</h2>
+
+        <header class="subscription-header">
+          <div>
+            <h1 class="subscription-title">Subscription Plans</h1>
+          </div>
+        </header>
+
+        <div class="subscription-grid">
+          <!-- 1 Month -->
+          <article class="subscription-card" role="region" aria-labelledby="plan-month">
+            <div class="plan-title">
+              <div>
+                <div id="plan-month" class="plan-name">Monthly</div>
+                <div class="price-subtitle">Billed every month</div>
+              </div>
+              <div class="plan-price">100 Ksh</div>
+            </div>
+
+            <ul class="plan-features" aria-label="Monthly plan features">
+              <li><strong>Premium access</strong> — see below for full benefits</li>
+              <li>Automatic renewals</li>
+              <li>Cancel anytime</li>
+            </ul>
+
+            <div class="plan-cta">
+              <div class="plan-note">Best for short-term testers</div>
+              <button class="subscribe-btn" data-plan="monthly" data-price="100">
+                Subscribe
+              </button>
+            </div>
+          </article>
+
+          <!-- 3 Months -->
+          <article class="subscription-card" role="region" aria-labelledby="plan-3mo">
+            <div class="plan-title">
+              <div>
+                <div id="plan-3mo" class="plan-name">3 Months</div>
+                <div class="price-subtitle">Save a little vs monthly</div>
+              </div>
+              <div class="plan-price">312 Ksh</div>
+            </div>
+
+            <ul class="plan-features" aria-label="3 months plan features">
+              <li><strong>Premium access</strong> — see below for full benefits</li>
+              <li>One-time 3-month payment</li>
+              <li>Priority customer support</li>
+            </ul>
+
+            <div class="plan-cta">
+              <div class="plan-note">Good for seasonal campaigns</div>
+              <button class="subscribe-btn" data-plan="3months" data-price="312">
+                Subscribe
+              </button>
+            </div>
+          </article>
+
+          <!-- 1 Year (Best Value) -->
+          <article class="subscription-card plan-highlight plan-best" role="region" aria-labelledby="plan-year">
+            <div class="plan-title">
+              <div>
+                <div id="plan-year" class="plan-name">1 Year <span class="plan-badge">Best value</span></div>
+                <div class="price-subtitle">Most popular — save more</div>
+              </div>
+              <div class="plan-price">1000 Ksh</div>
+            </div>
+
+            <ul class="plan-features" aria-label="1 year plan features">
+              <li><strong>Premium access</strong> — see below for full benefits</li>
+              <li>Exclusive yearly badge</li>
+              <li>Discounts on tree purchases from partnered sellers</li>
+            </ul>
+
+            <div class="plan-cta">
+              <div class="plan-note">Great for committed planters</div>
+              <button class="subscribe-btn" data-plan="year" data-price="1000">
+                Subscribe
+              </button>
+            </div>
+          </article>
+
+          <!-- 3 Years -->
+          <article class="subscription-card" role="region" aria-labelledby="plan-3yr">
+            <div class="plan-title">
+              <div>
+                <div id="plan-3yr" class="plan-name">3 Years</div>
+                <div class="price-subtitle">Long-term + biggest savings</div>
+              </div>
+              <div class="plan-price">2500 Ksh</div>
+            </div>
+
+            <ul class="plan-features" aria-label="3 years plan features">
+              <li><strong>Premium access</strong> — see below for full benefits</li>
+              <li>Longest term — deepest discounts</li>
+              <li>Priority verification for tree submissions</li>
+            </ul>
+
+            <div class="plan-cta">
+              <div class="plan-note">Ideal for organizations & teams</div>
+              <button class="subscribe-btn" data-plan="3years" data-price="2500">
+                Subscribe
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Premium benefits full list -->
+        <section class="premium-benefits" aria-labelledby="benefits-heading">
+          <h3 id="benefits-heading" class="benefits-heading">What <em class="benefits-emphasis">Premium</em> gives you</h3>
+          <div class="subscription-card">
+            <ul class="benefits-list">
+              <li>
+                <strong>Unlimited submissions per day</strong> — submit as many trees as you plant (virtual or real).
+              </li>
+              <li>
+                <strong>Priority verification</strong> — faster verification of uploaded tree photos so your planting counts sooner.
+              </li>
+              <li>
+                <strong>Advanced analytics</strong> — per-tree metrics, planting trends, and exportable reports for teams.
+              </li>
+              <li>
+                <strong>Exclusive badges & leaderboards</strong> — premium-only badges and premium leaderboard tiers.
+              </li>
+              <li>
+                <strong>Ad-free experience</strong> — cleaner interface and faster loading across the site.
+              </li>
+              <li>
+                <strong>Partner discounts</strong> — reduced prices when buying saplings or planting services from our partner sellers.
+              </li>
+              <li>
+                <strong>Premium competitions</strong> — access to invite-only challenges with exclusive prizes.
+              </li>
+              <li>
+                <strong>Team management</strong> — create/manage small teams, delegate verifiers, and track team progress.
+              </li>
+            </ul>
+            <p class="benefits-note">
+              All subscriptions auto-renew by default. You can cancel anytime in your account settings or by contacting support.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="subscription-footer">
+      <div>Need a custom or enterprise plan? Contact <a href="lagati1001@gmail.com">greentrace.com</a></div>
+      <div style="margin-top:8px;">Prices shown in Kenyan Shilling (Ksh).</div>
+    </footer>
+  </div>
+
+  <!-- Modal for phone input -->
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Enter Your M-Pesa Number</h3>
+      <input id="modalPhoneInput" type="tel" placeholder="07XXXXXXXX" required />
+      <button id="confirmPaymentBtn" class="confirm-btn">Confirm Payment</button>
+      <button id="closeModalBtn" class="close-btn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- Update Navigation Based on Login Status -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token');
+      const userName = localStorage.getItem('userName');
+      const navAuthArea = document.getElementById('nav-auth-area');
+      
+      if (token && userName) {
+        // User is logged in
+        navAuthArea.innerHTML = `
+          <span class="muted">Hello, <strong>${userName}</strong></span>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="add-tree.html">My Trees</a>
+          <a href="leaderboard.html">Leaderboard</a>
+          <a href="#" onclick="logout()" class="btn">Logout</a>
+        `;
+      }
+    });
+    
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('greentrace_user');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <!-- Unified JavaScript -->
+  <script src="./scripts/subscription.js"></script>
+</body>
+</html>

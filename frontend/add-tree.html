@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenTrace — My Trees</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+
+  <!-- Consolidated CSS -->
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <a class="brand" href="index.html" aria-label="GreenTrace home">
+        <img src="./images/image.png" alt="GreenTrace logo" class="logo-img" />
+        <span>GreenTrace</span>
+      </a>
+      <p class="tagline">Track and Celebrate Tree Planting</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a> 
+      <a href="add-tree.html" aria-current="page" class="nav-link-active">My Trees</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="sub.html">Subscriptions</a>
+      <a href="#" onclick="logout()">Logout</a>
+      <button id="darkModeToggle" class="dark-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container" role="main">
+    <section class="map-section card">
+      <h2>My Planted Trees Map</h2>
+      <div id="map" class="tree-map" aria-label="Map showing my planted trees"></div>
+    </section>
+
+    <section class="form-section card">
+      <h2>Add a Tree 🌱</h2>
+      <form id="treeForm" class="tree-form" novalidate role="form">
+        <label>
+          Tree name
+          <input type="text" id="treeName" placeholder="e.g., Mugumo" required>
+        </label>
+
+        <label>
+          Planter name
+          <input type="text" id="planterName" placeholder="Your full name" required readonly>
+        </label>
+
+        <label>
+          Location
+          <select id="locationSelect" required>
+            <option value="">Loading locations...</option>
+          </select>
+        </label>
+
+        <label>
+          Tree Image (Required for AI Verification)
+          <input type="file" id="treeImage" accept="image/*" required>
+          <small>Take a clear photo of the planted tree/sapling for AI verification</small>
+        </label>
+
+        <label>
+          Description (optional)
+          <textarea id="description" rows="3" placeholder="Why was this tree planted?"></textarea>
+        </label>
+
+        <div id="verificationProgress" class="hidden">
+          <div class="verification-details">
+            <strong>AI Verification in Progress</strong>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div id="verificationStatus">Analyzing image...</div>
+          </div>
+        </div>
+
+        <div class="tree-form-actions">
+          <button id="submitTreeBtn" class="btn primary" type="submit">Add Tree 🌳</button>
+          <button id="center-my-trees" type="button" class="btn secondary">Center on my trees</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="gallery-section card">
+      <h2>My Verified Trees</h2>
+      <div id="treeGallery" class="tree-gallery-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <footer class="footer"><small>Powered by SDG 15 — Life on Land</small></footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+  <!-- Unified JavaScript -->
+  <script src="./scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenTrace — Leaderboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Consolidated CSS -->
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <a class="brand" href="index.html">
+        <img src="./images/image.png" alt="GreenTrace logo" class="logo-img" />
+        <span>GreenTrace</span>
+      </a>
+      <p class="tagline">Track and Celebrate Tree Planting</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="add-tree.html">My Trees</a>
+      <a href="leaderboard.html" class="nav-link-active">Leaderboard</a>
+      <a href="sub.html">Subscriptions</a>
+      <a href="#" onclick="logout()">Logout</a>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="leaderboard-container">
+    <section class="leaderboard-section">
+      <h2>Leaderboard 🏆</h2>
+      
+      <!-- Stats Summary -->
+      <div class="leaderboard-stats">
+        <div class="leaderboard-stat-card">
+          <div class="leaderboard-stat-number" id="totalUsers">0</div>
+          <div class="leaderboard-stat-label">Total Planters</div>
+        </div>
+        <div class="leaderboard-stat-card">
+          <div class="leaderboard-stat-number" id="totalTrees">0</div>
+          <div class="leaderboard-stat-label">Total Trees</div>
+        </div>
+        <div class="leaderboard-stat-card">
+          <div class="leaderboard-stat-number" id="totalSpecies">0</div>
+          <div class="leaderboard-stat-label">Unique Species</div>
+        </div>
+      </div>
+
+      <div id="leaderboard" class="leaderboard-list">
+        <p class="leaderboard-empty">Loading leaderboard...</p>
+      </div>
+
+      <div class="leaderboard-actions">
+        <a href="dashboard.html" class="leaderboard-btn">Back to Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Keep planting for a greener tomorrow 🌍</small>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- Unified JavaScript -->
+  <script src="./scripts/app.js"></script>
+</body>
+</html>

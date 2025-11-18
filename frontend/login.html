@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenTrace — Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <!-- NAV: shows brand (logo + text), links, auth area and dark mode toggle -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <!-- Logo image + site name-->
+      <a class="brand" aria-label="GreenTrace home">
+        <img src="./images/image.png" alt="GreenTrace logo" class="logo-img" />
+        <span >GreenTrace</span>
+      </a>
+      <p class="tagline">Track and Celebrate Tree Planting</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <!-- Auth area is updated dynamically by script.js -->
+        <a href="signup.html" class="btn">Sign Up</a>
+
+      <!-- Dark mode toggle -->
+      <button id="darkModeToggle" class="dark-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <main class="auth-container">
+    <h2>Login</h2>
+
+    <form id="loginForm" class="auth-form">
+      <label>
+        Email
+        <input type="email" id="loginEmail" required placeholder="you@example.com">
+      </label>
+
+      <label>
+        Password
+        <input type="password" id="loginPassword" required placeholder="Your password">
+      </label>
+
+      <button class="btn primary" id="loginBtn" type="submit">Login</button>
+    </form>
+
+    <p class="muted">
+      Don't have an account? <a href="signup.html">Sign up here</a>.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <small>GreenTrace — track and celebrate tree planting 🌱</small>
+  </footer>
+
+  <script src="./scripts/app.js"></script>
+</body>
+</html>
