@@ -14,6 +14,40 @@ router.post('/', auth, async (req, res) => {
     console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
+router.get('/mine', auth, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const [rows] = await conn.execute(
+      'SELECT * FROM trees WHERE user_id = ? ORDER BY planted_at DESC',
+      [userId]
+    );
+    res.json({ trees: rows });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
+});
+router.delete('/:id', auth, async (req, res) => {
+  const userId = req.user.id;
+  const treeId = req.params.id;
+
+  try {
+    const [rows] = await conn.execute(
+      "DELETE FROM trees WHERE id = ? AND user_id = ?",
+      [treeId, userId]
+    );
+
+    if (rows.affectedRows === 0) {
+      return res.status(403).json({ error: "Not allowed" });
+    }
+
+    res.json({ ok: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 
 module.exports = router;
