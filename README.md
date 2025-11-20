@@ -6,6 +6,8 @@ Users can sign up, plant virtual or real trees, upload pictures, and track their
 ## 🌍 Project Overview 
 GreenTrace empowers individuals and communities to participate in sustainability efforts by tracking tree-planting activities digitally. Users can register, upload photos of planted trees, and view their progress on a dynamic dashboard and leaderboard. The system uses AI-based verification to ensure transparency and authenticity.
 
+✅SDG 13
+GreenTrace directly supports the United Nations Sustainable Development Goals (SDGs), especially SDG 13 (Climate Action) and SDG 15 (Life on Land). By enabling individuals and communities to track, verify, and showcase tree-planting activities, GreenTrace promotes environmental stewardship, encourages reforestation, and enhances transparency in climate-positive actions. The platform empowers users to contribute to carbon reduction efforts while strengthening accountability and data-driven decision-making for sustainability projects.
 ---
 
 ## 🚀 Features
