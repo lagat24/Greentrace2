@@ -32,11 +32,13 @@ db.getConnection()
 const authRoutes = require('./routes/auth');
 const treeRoutes = require('./routes/trees');
 const leaderboardRoutes = require('./routes/leaderboard');
+const saplingRoute = require("./routes/saplingRoute");
 
 // ✅ Updated route prefixes to include /api/
 app.use('/api/auth', authRoutes);
 app.use('/api/trees', treeRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
+app.use("/api/sapling", saplingRoute);
 
 // Root route (for quick check)
 app.get('/', (req, res) => res.send({ ok: true, app: 'GreenTrace API' }));
