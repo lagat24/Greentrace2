@@ -58,7 +58,8 @@ ___
 
 ## 🧠 Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express.js  
+- **Backend:** Node.js, Express.js
+- **AI:** Tensorflow
 - **Database:** SQL (Users, Trees, Leaderboard tables)  
 - **Hosting:**  
   - Frontend – Netlify  
